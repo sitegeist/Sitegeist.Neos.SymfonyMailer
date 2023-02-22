@@ -3,11 +3,9 @@ declare(strict_types=1);
 
 namespace Sitegeist\Neos\SymfonyMailer\Domain;
 
-use Neos\Flow\Annotations as Flow;
 use Symfony\Component\Mailer\Mailer;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mailer\Transport;
-use Symfony\Component\Mime\Email;
 
 class MailerFactory
 {

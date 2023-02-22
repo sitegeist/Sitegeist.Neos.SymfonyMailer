@@ -3,14 +3,9 @@ declare(strict_types=1);
 
 namespace Sitegeist\Neos\SymfonyMailer\Domain;
 
-use Neos\Flow\Annotations as Flow;
-use Neos\Flow\Mvc\ActionResponse;
 use Neos\Flow\ResourceManagement\PersistentResource;
 use Neos\Utility\MediaTypes;
 use Psr\Http\Message\UploadedFileInterface;
-use Symfony\Component\Mailer\Mailer;
-use Symfony\Component\Mailer\MailerInterface;
-use Symfony\Component\Mailer\Transport;
 use Symfony\Component\Mime\Address;
 use Symfony\Component\Mime\Email;
 

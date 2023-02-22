@@ -5,10 +5,8 @@ namespace Sitegeist\Neos\SymfonyMailer\Action;
 
 use Neos\Flow\Annotations as Flow;
 use Neos\Flow\Mvc\ActionResponse;
-use Neos\Flow\ResourceManagement\PersistentResource;
 use Neos\Fusion\Form\Runtime\Domain\ActionInterface;
 use Neos\Fusion\FusionObjects\AbstractFusionObject;
-use Psr\Http\Message\UploadedFileInterface;
 use Sitegeist\Neos\SymfonyMailer\Domain\MailerFactory;
 use Sitegeist\Neos\SymfonyMailer\Domain\MailFactory;
 use Symfony\Component\Mailer\MailerInterface;
