@@ -1,0 +1,20 @@
+{
+    "description": "",
+    "type": "neos-package",
+    "name": "sitegeist/neos-symfonymailer",
+    "require": {
+        "neos/neos": "~8.0 || ~9.0 || dev-master",
+        "neos/fusion-form": "^2.0 || dev-master",
+        "symfony/mailer": "^6.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sitegeist\\Neos\\SymfonyMailer\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Sitegeist.Neos.SymfonyMailer"
+        }
+    }
+}
