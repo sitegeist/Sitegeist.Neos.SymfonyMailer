@@ -1,7 +1,15 @@
 {
-    "description": "",
+    "description": "A connector to use the symfony mailer component in Neos.Fusion.Form Actions and via PHP",
     "type": "neos-package",
     "name": "sitegeist/neos-symfonymailer",
+    "license": "GPL-3.0+",
+    "authors": [
+        {
+            "name": "Martin Ficzel",
+            "email": "ficzel@sitegeist.de",
+            "role": "Developer"
+        }
+    ],
     "require": {
         "neos/neos": "~8.0 || ~9.0 || dev-master",
         "neos/fusion-form": "^2.0 || dev-master",
