@@ -1,6 +1,6 @@
 # Sitegeist.Neos.SymfonyMailer
 
-Use the symfony mailer from Neos CMS, especially together with Neos.Fusion.Form but it can also be used directly via PHP.
+Use the [Symfony Mailer Component](https://symfony.com/doc/current/mailer.html) from Neos CMS, especially together with Neos.Fusion.Form but it can also be used directly via PHP.
 
 ### Authors & Sponsors
 
