@@ -35,10 +35,10 @@ class MailActionImplementation extends AbstractFusionObject implements ActionInt
         $html = $this->fusionValue('html') ?: null;
 
         $recipientAddress = $this->fusionValue('recipientAddress') ?: null;
-        $recipientName = $this->fusionValue('recipientName') ?: null;
+        $recipientName = $this->fusionValue('recipientName') ?: '';
 
         $senderAddress = $this->fusionValue('senderAddress') ?: null;
-        $senderName = $this->fusionValue('senderName') ?: null;
+        $senderName = $this->fusionValue('senderName') ?: '';
 
         $replyToAddress = $this->fusionValue('replyToAddress') ?: null;
         $carbonCopyAddress = $this->fusionValue('carbonCopyAddress') ?: null;
