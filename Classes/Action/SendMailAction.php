@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Sitegeist\Neos\SymfonyMailer\Action;
@@ -19,6 +20,9 @@ class SendMailAction extends AbstractAction
     protected MailFactory $mailFactory;
 
 
+    /**
+     * @return ActionResponse|null
+     */
     public function perform(): ?ActionResponse
     {
         $recipientAddress = $this->options['recipientAddress'] ?? null;

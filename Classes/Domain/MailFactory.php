@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Sitegeist\Neos\SymfonyMailer\Domain;
@@ -13,32 +14,31 @@ class MailFactory
 {
     /**
      * @param string $subject
-     * @param Address[]|Address|string $from
      * @param Address[]|Address|string $to
+     * @param Address|string $from
      * @param string|null $text
      * @param string|null $html
      * @param Address[]|Address|string|null $replyTo
      * @param Address[]|Address|string|null $cc
      * @param Address[]|Address|string|null $bcc
-     * @param array|null $attachments
+     * @param array<PersistentResource|UploadedFileInterface|array{'name'?:string, 'content'?:string, 'type'?:string}|string>|null $attachments
      * @return Email
      */
     public function createMail(
         string $subject,
         array|Address|string $to,
-        array|Address|string $from,
+        Address|string $from,
         string $text = null,
         string $html = null,
         array|Address|string $replyTo = null,
         array|Address|string $cc = null,
         array|Address|string $bcc = null,
         array $attachments = null
-    ): Email
-    {
+    ): Email {
         $mail = new Email();
 
         $mail
-            ->from($from )
+            ->from($from)
             ->subject($subject);
 
         if (is_array($to)) {
@@ -86,6 +86,11 @@ class MailFactory
         return $mail;
     }
 
+    /**
+     * @param Email $mail
+     * @param array<PersistentResource|UploadedFileInterface|array{'name'?:string, 'content'?:string, 'type'?:string}|string> $attachments
+     * @return void
+     */
     protected function addAttachmentsToMail(Email $mail, array $attachments): void
     {
         if (is_array($attachments)) {
@@ -107,8 +112,6 @@ class MailFactory
                     $name = $attachment['name'];
                     $type =  $attachment['type'] ?? MediaTypes::getMediaTypeFromFilename($name);
                     $mail->attach($content, $name, $type);
-                } elseif (is_array($attachment)) {
-                    $this->addAttachmentsToMail($mail, $attachment);
                 }
             }
         }

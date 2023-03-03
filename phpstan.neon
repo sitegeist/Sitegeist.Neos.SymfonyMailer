@@ -1,0 +1,7 @@
+parameters:
+	level: 1
+	paths:
+		- Classes
+	excludePaths:
+		 # reading fusion is not type safe
+		- Classes/Action/SendMailAction.php
