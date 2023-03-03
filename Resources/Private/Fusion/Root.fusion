@@ -1,3 +1,0 @@
-prototype(Sitegeist.Neos.SymfonyMailer:MailAction) {
-  @class = 'Sitegeist\\Neos\\SymfonyMailer\\Action\\MailActionImplementation'
-}

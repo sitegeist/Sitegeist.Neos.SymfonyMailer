@@ -2,8 +2,3 @@ Sitegeist:
   Neos:
     SymfonyMailer:
       dsn: 'sendmail://default'
-Neos:
-  Neos:
-    fusion:
-      autoInclude:
-        Sitegeist.Neos.SymfonyMailer: true

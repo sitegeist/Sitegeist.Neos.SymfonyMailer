@@ -13,9 +13,9 @@ Use the [Symfony Mailer Component](https://symfony.com/doc/current/mailer.html) 
 Sitegeist.Neos.SymfonyMailer is available via packagist `composer require sitegeist/neos-symfonymailer`.
 We use semantic-versioning, so every breaking change will increase the major version number.
 
-## Fusion `Sitegeist.Neos.SymfonyMailer:MailAction`
+## Neos.Fusion.Form Action `Sitegeist.Neos.SymfonyMailer:SendMailAction`
 
-The prototype `Sitegeist.Neos.SymfonyMailer:MailAction` allows to specify an email that will be sent after the runtime form
+The `Sitegeist.Neos.SymfonyMailer:SendMailAction` allows to specify an email that will be sent after the runtime form
 was successfully submitted.
 
 Options:
@@ -40,7 +40,8 @@ Example:
 form = Neos.Fusion.Form:Runtime.RuntimeForm {
     # ... 
     actions {
-        email = Sitegeist.Neos.SymfonyMailer:MailAction {
+        type = 'Sitegeist.Neos.SymfonyMailer:SendMail'
+        options {
             senderAddress = ${q(node).property('mailFrom')}
             recipientAddress = ${q(node).property('mailTo')}
 
