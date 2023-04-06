@@ -88,14 +88,14 @@ class MailFactory
 
     /**
      * @param Email $mail
-     * @param array<PersistentResource|UploadedFileInterface|array{'name'?:string, 'content'?:string, 'type'?:string}|string> $attachments
+     * @param iterable<PersistentResource|UploadedFileInterface|string|array{'name':string, 'content':string, 'type'?:string}|Collection> $attachments
      * @return void
      */
-    protected function addAttachmentsToMail(Email $mail, array $attachments): void
+    protected function addAttachmentsToMail(Email $mail, iterable $attachments): void
     {
-        if (is_array($attachments)) {
+        if (is_iterable($attachments)) {
             foreach ($attachments as $attachment) {
-                if (is_string($attachment)) {
+                if (is_string($attachment) && file_exists($attachment)) {
                     $mail->attachFromPath($attachment);
                 } elseif (is_object($attachment) && ($attachment instanceof UploadedFileInterface)) {
                     $mail->attach($attachment->getStream()->getContents(), $attachment->getClientFilename(), $attachment->getClientMediaType());
@@ -112,6 +112,8 @@ class MailFactory
                     $name = $attachment['name'];
                     $type =  $attachment['type'] ?? MediaTypes::getMediaTypeFromFilename($name);
                     $mail->attach($content, $name, $type);
+                } elseif (is_iterable($attachment)) {
+                    $this->addAttachmentsToMail($mail, $attachment);
                 }
             }
         }
