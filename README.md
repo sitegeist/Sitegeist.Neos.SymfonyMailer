@@ -31,7 +31,8 @@ Options:
  - `html`: (`string`) The html content (if `text` and `html` are defined a multipart email is created)
  - `attachments.[key]`: (string) The string is treated as a path where the attachment is read from.
  - `attachments.[key]`: (`UploadedFileInterface`|`FlowResource`) The uploaded file or resource is added to the mail
- - `attachments.[key]`: (`array`) Create a file on the fly from `name` and `content`
+ - `attachments.[key]`: (`array{name:string, content:string}`) Create a file on the fly from `name` and `content`
+ - `attachments.[key]`: (`iterable`) If iterables (Collections) are passed the files are attached recursively 
  - `testMode`: (`boolean`) Show debug information instead of actually sending the email.
  - `dsn`: (`string`) Use the specified mailer dsn instead of the global setting
 
