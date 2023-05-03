@@ -88,7 +88,7 @@ class MailFactory
 
     /**
      * @param Email $mail
-     * @param iterable<PersistentResource|UploadedFileInterface|string|array{'name':string, 'content':string, 'type'?:string}|Collection> $attachments
+     * @param iterable<PersistentResource|UploadedFileInterface|string|array{'name'?:string, 'content'?:string, 'type'?:string}> $attachments
      * @return void
      */
     protected function addAttachmentsToMail(Email $mail, iterable $attachments): void
