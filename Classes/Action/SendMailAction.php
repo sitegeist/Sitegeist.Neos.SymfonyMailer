@@ -7,8 +7,8 @@ namespace Sitegeist\Neos\SymfonyMailer\Action;
 use Neos\Flow\Annotations as Flow;
 use Neos\Flow\Mvc\ActionResponse;
 use Neos\Fusion\Form\Runtime\Action\AbstractAction;
-use Sitegeist\Neos\SymfonyMailer\Domain\MailerFactory;
-use Sitegeist\Neos\SymfonyMailer\Domain\MailFactory;
+use Sitegeist\Neos\SymfonyMailer\Factories\MailerFactory;
+use Sitegeist\Neos\SymfonyMailer\Factories\MailFactory;
 use Symfony\Component\Mime\Address;
 
 class SendMailAction extends AbstractAction

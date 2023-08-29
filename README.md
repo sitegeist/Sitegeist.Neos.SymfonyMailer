@@ -62,39 +62,6 @@ form = Neos.Fusion.Form:Runtime.RuntimeForm {
     }
 }
 ```
-## Usage via PHP
-
-The package provides two factory classes to create Mailers and Emails easily.
-
-- `Sitegeist\Neos\SymfonyMailer\Domain\MailerFactory` with the method `createMailer` that will create a mailer for the specified dsn or the configured default dsn.
-- `Sitegeist\Neos\SymfonyMailer\Domain\MailFactory` with the method `createMail` that will create a mail based on the provided arguments.
-
-Example:
-```php
-use Sitegeist\Neos\SymfonyMailer\Domain\MailerFactory;
-use Sitegeist\Neos\SymfonyMailer\Domain\MailFactor;
-
-class MailController
-{
-    #[Flow\Inject]
-    protected MailerFactory $mailerFactory;
-
-    #[Flow\Inject]
-    protected MailFactory $mailFactory;
-
-    public function exampleAction()
-    {
-        $mailer = $this->mailerFactory->createMailer();
-        $mail = $this->mailFactory->createMail(
-            $subject,
-            $recipient,
-            $sender,
-            $text,
-            $html
-        );
-        $mailer->send($mail);
-    }
-```
 
 ## Configuration
 
@@ -107,6 +74,11 @@ Sitegeist:
     SymfonyMailer:
       dsn: 'sendmail://default'
 ```
+
+## Usage via PHP
+
+The package is built upon the package Sitegeist.Neos.SymfonyMailer.Factories which can be used directly from php.
+See https://github.com/sitegeist/Sitegeist.Neos.SymfonyMailer.Factories how this is done.
 
 ## Contribution
 
